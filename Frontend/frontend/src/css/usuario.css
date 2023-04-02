@@ -1,0 +1,253 @@
+.colorFondoUser {
+    background-color: #2C3E50 !important;
+}
+
+.fondoBarraLateralUser {
+    background-color: #212F3D !important;
+}
+
+.contenedorBarraLateral {
+    height: 100%;
+}
+
+.colorLetraMenuNavBar {
+    color: #ffffff;
+}
+
+.contenedorIcono {
+    display: grid;
+    justify-content: end;
+
+}
+
+.itemNavBar:hover {
+    background: linear-gradient(to top, transparent, #2C3E50);
+    filter: brightness(1.5);
+}
+
+.cuadroFoto {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.cuadro1 {
+    justify-self: center;
+}
+
+.imagenUser {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.avatarUser {
+    padding-left: 10px;
+}
+
+.hoverColorIcono {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 4px;
+}
+
+.hoverColorIcono:hover {
+    background: linear-gradient(to top, transparent, #2C3E50);
+    filter: brightness(2);
+}
+
+.iconoMenu {
+    width: 45px !important;
+    height: 45px !important;
+    color: #E67E22;
+    border-radius: 5px;
+}
+
+.iconoMenu:Hover {
+    background: linear-gradient(to top, transparent, #2C3E50);
+    filter: brightness(2);
+}
+
+.ocultar {
+    width: 25px !important;
+}
+
+.menuOpcionesUsuario {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 40px;
+
+
+}
+
+.nombreMenuOpciones {
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+
+}
+
+.contenedorIcono {
+    align-self: center;
+
+}
+
+.nombreOpcionesMenu {
+    justify-self: left;
+    align-self: center;
+    padding: 10px;
+    /*font-size: 16px; 
+    height: auto;
+    width: 150px;
+    word-wrap: break-word;
+    display: inline-block;*/
+}
+
+.colorIcono {
+    color: #E67E22;
+    justify-self: center;
+}
+
+.nombreMenuOpciones:hover {
+    color: #E67E22;
+}
+
+.active {
+    color: #E67E22 !important;
+    outline: none;
+    /*background: linear-gradient(to top, transparent, #2C3E50);*/
+    filter: brightness(1.5);
+
+    border-radius: 10px;
+    text-decoration: none;
+
+}
+
+/*REGISTRAR EQUIPO*/
+.registrarEquipo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+    background: linear-gradient(to bottom, #212F3D, #2C3E50);
+    border-radius: 10px;
+    gap: 140px;
+}
+
+.registrarParticipantes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #212F3D, #2C3E50);
+    gap: 6px;
+}
+
+/*.registrarParticipantes > div{
+    border: red 2px solid;
+}*/
+.inputRegistrarEquipo {
+    width: 100%;
+}
+
+.contenedorBtnAñadirParticipante {
+    grid-column: 2/3;
+    padding-top: 10px;
+    justify-self: center;
+}
+
+.btnAñadir {
+    background-color: #059d2d !important;
+}
+
+.btnAñadir:hover {
+    background-color: #035f1b !important;
+}
+
+.contenedorBtnCancelarParticipante {
+    padding-top: 10px;
+    justify-self: center;
+}
+
+.btnCancelar {
+    background-color: #a90505 !important;
+}
+
+.btnCancelar:hover {
+    background-color: #690404 !important;
+}
+
+.selectCategoria {
+    color: #ffffff !important;
+}
+
+.selectValor {
+    color: #ffffff !important;
+}
+
+/*opciones del menu del avatar*/
+.avatarUser {
+    cursor: pointer;
+}
+
+.avatarFotoUsuario:hover {
+    background-color: aqua;
+    opacity: 0.4;
+}
+
+.optionMenuUser:hover {
+    background: linear-gradient(to top, transparent, #496581);
+}
+
+/*Campos de registrar equipo*/
+.colorFondoRegistrarEquipo {
+    background-color: transparent !important;
+}
+.fondoColor{
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+.hr{
+    color: black;
+    border: 2px solid black;
+    background: black;
+    padding-top: 2px;
+}
+.cuandroContentRegisterTorneo{
+    border-radius: 20px;
+    background-color: #2e4a67;
+    border: none;
+    padding: 20px 30px 20px 30px;
+    -webkit-box-shadow: 0px 4px 26px 8px rgba(91, 119, 171, 0.66);
+    -moz-box-shadow: 0px 4px 26px 8px rgba(91, 119, 171, 0.66);
+    box-shadow: 0px 4px 26px 8px rgba(91, 119, 171, 0.66);
+}
+.tituloPreInsRes{
+    padding-top: 25px;
+}
+.contentBtnRegisterCancelar{
+    padding-top: 25px;
+}
+/*.contentBarraRegisterTorneo{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}*/
+.btnDelete{
+    cursor: pointer;
+}
+.btnDelete:hover{
+    color: #ccb24b;
+}
+.listaTorneo{
+    border-bottom: #E67E22 2px solid;
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+.nroLista{
+    color: #ffffff;
+    border-bottom: #E67E22 2px solid;
+    border-left: #E67E22 2px solid;
+    border-bottom-left-radius: 10px;
+    align-content: center;
+}

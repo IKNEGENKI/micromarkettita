@@ -1,4 +1,45 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
+//import Router1 from './rutas/Router1';
+import index from "./rutas/index.html";
+//import Usuario from './componentes/Usuario';
+//import UserDelegado from './componentes/UserDelegado';
+//import UserVen from './componentes/UserVen';
+//import Router3 from './rutas/Router3';
+//import ListItemsVen from './componentes/ListItemsVen';
+//import { useState } from 'react';
+//import { ProtectedRoute } from './rutas/ProtectedRoute';
+//import VistaPdf from './componentes/VistaPdf';
+
+ function App() {
+
+  /*const [user, setUser] = useState(null)
+
+  const login = () => {
+    //request done
+    setUser({
+      id: 1,
+      name: 'John',
+      roles: ['admi']
+    })
+    const logout = () => setUser(null)
+  }
+*/
+ return (
+    <>
+      <Routes>
+        <Route path='/*' element={<index/>} />
+        <Route />
+      </Routes>
+    </>
+  );
+}
+
+export default App; 
+
+
+
+
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -23,3 +64,4 @@ function App() {
 }
 
 export default App;
+*/
