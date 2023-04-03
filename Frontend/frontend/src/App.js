@@ -1,6 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import logo from './logo.svg';
+import './App.css';
 //import Router1 from './rutas/Router1';
-import index from "./rutas/index.html";
+//import index from "./rutas/index.html";
 //import Usuario from './componentes/Usuario';
 //import UserDelegado from './componentes/UserDelegado';
 //import UserVen from './componentes/UserVen';
@@ -25,12 +26,7 @@ import index from "./rutas/index.html";
   }
 */
  return (
-    <>
-      <Routes>
-        <Route path='/*' element={<index/>} />
-        <Route />
-      </Routes>
-    </>
+   "hola"
   );
 }
 
