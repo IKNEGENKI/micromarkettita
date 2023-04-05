@@ -21,6 +21,13 @@ export const OfertaNueva = () => {
   
   const today = new Date();
   const formattedDate = today.toISOString().slice(0, 10);
+
+  const hoy = new Date();
+
+  // Agregar un año a la fecha actual
+  const maxFecha = new Date(hoy.getFullYear() + 1, hoy.getMonth(), hoy.getDate()).toISOString().split('T')[0];
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -28,7 +35,7 @@ export const OfertaNueva = () => {
     
 
     handleReset();
-  
+  };
   const handleReset = () => {
 
     setProducto("");
@@ -39,7 +46,7 @@ export const OfertaNueva = () => {
   };
   
   return (
-    <div className="container-fluid">
+    <div className='responsive'>
       
         
       
@@ -57,17 +64,17 @@ export const OfertaNueva = () => {
           </datalist>
           <br />
           <label htmlFor="precio" >Precio de Venta(bs)*</label>
-          <input type='number' className="form-control " id="precio" step="0.01"placeholder='precio*' min="0.5" max="999999"  required value={precio} onChange={(e) => setPrecio(e.target.value)} />
+          <input type='number' className="form-control " id="precio" step="0.01"placeholder='precio*' min="0.1" max="999999"  required value={precio} onChange={(e) => setPrecio(e.target.value)} />
           <br />
           
           </div>
 
           <div className='col'>
           <label htmlFor="inicio">Inicio de Oferta*</label>
-          <input type="date" className="form-control " name="ini" min={formattedDate} id="inicio" placeholder='fecha-inicio*'required value={inicio} onChange={(e) => setInicio(e.target.value)} />
+          <input type="date" className="form-control " name="ini" min={formattedDate} max={maxFecha} id="inicio" placeholder='fecha-inicio*'required value={inicio} onChange={(e) => setInicio(e.target.value)} />
           <br />
           <label htmlFor="fin">Fin de Oferta*</label>
-          <input type= "date" className="form-control "  min={inicio} id="fin" placeholder='fecha-fin*'required value={fin} onChange={(e) => setFin(e.target.value)} />
+          <input type= "date" className="form-control "  min={inicio} max={maxFecha} id="fin" placeholder='fecha-fin*'required value={fin} onChange={(e) => setFin(e.target.value)} />
           <br />
           
           </div>
@@ -89,4 +96,4 @@ export const OfertaNueva = () => {
   )
 }
 //export const RegistrarOfertaNueva();
-}
+
