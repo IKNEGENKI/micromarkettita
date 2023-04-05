@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class productosController extends Controller
+use App\models\modeloProducto;
+class productoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return modeloProducto::all();
     }
 
     /**
@@ -27,7 +27,9 @@ class productosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new modeloProducto($request->all());
+        $producto->save();
+        return $producto;
     }
 
     /**
@@ -35,7 +37,7 @@ class productosController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return modeloProducto::find($id);
     }
 
     /**
@@ -51,7 +53,11 @@ class productosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $producto = modeloProducto::find($id);
+        if(!is_null($producto)){
+            $producto->update($request->all());
+            return $producto;
+        }
     }
 
     /**
@@ -59,6 +65,7 @@ class productosController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $producto = modeloProducto::find($id);
+        $producto->delete();
     }
 }

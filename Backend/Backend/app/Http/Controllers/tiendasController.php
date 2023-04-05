@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\modeloTienda;
 class tiendasController extends Controller
 {
     /**
@@ -11,7 +11,7 @@ class tiendasController extends Controller
      */
     public function index()
     {
-        //
+        return modeloTienda::all();
     }
 
     /**
@@ -27,7 +27,9 @@ class tiendasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tienda = new modeloTienda ($request->all());
+        $tienda->save();
+        return $tienda;
     }
 
     /**
@@ -35,7 +37,7 @@ class tiendasController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return modeloTienda::find($id);
     }
 
     /**
@@ -51,7 +53,11 @@ class tiendasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $tienda = modeloTienda::find($id);
+        if(!is_null($tienda)){
+            $tienda->update($request->all());
+            return $tienda;
+        }
     }
 
     /**
@@ -59,6 +65,7 @@ class tiendasController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tienda = modeloTienda::find($id);
+        $tienda->delete();
     }
 }

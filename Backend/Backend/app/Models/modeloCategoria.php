@@ -11,6 +11,6 @@ class modeloCategoria extends Model
 
     protected $fillable = [
         'codcat',
-        'nombrecat',
+        'nombrecat',    
     ];
 }
