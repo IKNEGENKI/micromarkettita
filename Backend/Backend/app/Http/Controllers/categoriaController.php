@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\models\modeloCategoria;
 
 class categoriaController extends Controller
 {
    
-
+    public function index()
+    {
+        return modeloCategoria::all();
+    }
     /**
-     * Store 
+     * Store  
      */
     public function store(Request $request)
     {
-        //
+        $categoria = new modeloCategoria ($request->all());
+        $categoria->save();
+        return $categoria;
     }
 
     /**
@@ -21,7 +27,7 @@ class categoriaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return modeloCategoria::find($id);
     }
 
     
@@ -31,7 +37,11 @@ class categoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $categoria = modeloCategoria::find($id);
+        if(!is_null($categoria)){
+            $categoria->update($request->all());
+            return $categoria;
+        }
     }
 
     /**
@@ -39,6 +49,7 @@ class categoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $categoria = modeloCategoria::find($id);
+        $categoria->delete();
     }
 }
