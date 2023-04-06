@@ -15,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('vistaTienda',['Nombre'=>'Tita']);
 });
+Route::get('/tienda', 'tiendasController@index');
+Route::get('/producto', 'productoController@index');
+Route::get('/categoria', 'categoriaController@index');
+Route::get('/oferta','ofertaController@index');
+Route::get('/lote', 'lotesController@index');
+Route::get('/inventario', 'inventarioController@index');

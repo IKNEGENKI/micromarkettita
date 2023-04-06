@@ -15,13 +15,13 @@ return new class extends Migration
             $table->string('codprod', 5)->primary();
             $table->string('codcat');
             $table->foreign('codcat')->references('codcat')->on('categoria');
-            $table->string('codinventario');
-            $table->foreign('codinventario')->references('codinventario')->on('inventario');
+            //$table->string('codinventario');
+            //$table->foreign('codinventario')->references('codinventario')->on('inventario');
             $table->string('nombrepr');
             $table->string('marca');
             $table->string('descripcion');
             $table->decimal('precioventa', 10, 2);
-            $table->decimal('preciocompra', 10, 2);
+            //$table->decimal('preciocompra', 10, 2);
             $table->unsignedInteger('cantidadtotal');
             $table->string('image_path')->nullable();
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\productosController;
 use App\Http\Controllers\lotesController;
 use App\Http\Controllers\tiendasController;
 use App\Http\Controllers\inventarioController;
+use APP\Http\Controllers\ofertaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });*/
 Route::resource('api_categorias',categoriaController::class);
 
-Route::resource('api_productos',categoriaController::class);
+Route::resource('api_productos',productosController::class);
 
-Route::resource('api_lotes',categoriaController::class);
+Route::resource('api_lotes',lotesController::class);
 
-Route::resource('api_tiendas',categoriaController::class);
+Route::resource('api_tiendas',tiendasController::class);
 
-Route::resource('api_inventarios',categoriaController::class);
+Route::resource('api_inventarios',inventarioController::class);
+
+Route::resource('api_oferta',ofertaController::class);

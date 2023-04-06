@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\models\modeloInventario;
 class inventarioController extends Controller
 {
    
     public function index()
     {
-        //
+        return modeloInventario::all();
     }
     /**
      * Store a newly created resource in storage.
@@ -24,13 +24,12 @@ class inventarioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return modeloInventario::find($id);
     }
 
     
-
     /**
-     * Update the specified resource in storage.
+     * Update 
      */
     public function update(Request $request, string $id)
     {
@@ -38,7 +37,7 @@ class inventarioController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * delete
      */
     public function destroy(string $id)
     {
