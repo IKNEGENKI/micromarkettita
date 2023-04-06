@@ -242,7 +242,12 @@ body{
 .body_move{
     margin-left: 250px;
 }
-
+.home{
+    background-color:#FAF7F0  ;
+}
+.container{
+    background-color: #FAF7F0 ;
+}
 /*para el js*/
 .menu__side_move{
     width: 250px;

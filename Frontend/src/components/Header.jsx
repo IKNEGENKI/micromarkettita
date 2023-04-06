@@ -72,7 +72,7 @@ export const Header = () => {
                     <a href = "#">
                         <div class="option">
                             <i><BsShop/></i>
-                             <a class ="button"><NavLink to="/modificarDatosNrDatosNn" className="nav-item nav-link text-center" >Modificar datos de negocio</NavLink></a>
+                             <a class ="button"><NavLink to="/modificarDatosN" className="nav-item nav-link text-center" >Modificar datos de negocio</NavLink></a>
                         </div>
                         
                     </a>
