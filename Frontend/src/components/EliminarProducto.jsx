@@ -36,6 +36,7 @@ export const EliminarProducto = () => {
 
   const handleReset = () => {
     setProductos(productos.map((producto) => ({ ...producto, seleccionado: false })));
+    window.location.href = '/home';
   };
 
   const handleProductoSelection = (id) => {
@@ -90,9 +91,8 @@ export const EliminarProducto = () => {
           <br />
           <br />
           <button type='submit' className='btn btn-primary mx-5'> Eliminar</button>
-          <button type='button' onClick={() =>{handleReset(); handleVolver();}} id='borrar' className='btn btn-danger mx-5'>
-            <NavLink to="/home" className="nav-item nav-link text-center" >Cancelar</NavLink>
-          </button>
+          <button type="button" onClick={handleReset} class='borrar' className="btn mx-5">Cancelar</button>
+          
       </form>
       )}
       </div>
