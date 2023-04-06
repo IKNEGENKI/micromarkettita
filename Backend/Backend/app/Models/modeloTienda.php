@@ -11,10 +11,12 @@ class modeloTienda extends Model
 
     protected $fillable = [
         'codTienda',
-        'nombre',
-        'direccion',
-        'telefono',
-        'propietario',
+        'Nombre',
+        'Dirección',
+        'Numero',
+        'Nombre del propietario',
+        'Correo electrónico',
+        'Descripción',
         
     ];
 }

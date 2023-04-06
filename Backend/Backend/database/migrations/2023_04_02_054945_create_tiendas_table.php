@@ -15,8 +15,11 @@ return new class extends Migration
             $table->string('codTienda', 5)->primary();
             $table->string('nombre');
             $table->string('direccion');
-            $table->string('telefono');
+            $table->string('Numero');
             $table->string('propietario');
+            $table->string('Descripcion');
+            $table->string('correo');
+
         });
     }
 

@@ -19,7 +19,16 @@ class tiendasController extends Controller
      */
     public function create()
     {
-        //
+        // Crea un nuevo usuario con los datos del formulario
+    /*$tienda = new modeloTienda;
+    $tienda->codTienda='TIT01';
+    $tienda->nombre = $request->input();
+    $tienda->Dirección = $request->input('direccion');
+    $tienda->numero = $request->input('numero');
+    $tienda->propietario = $request->input('Nombre del propietario');
+    $tienda->correo = $request->input('Correo electronico');
+    $tienda->Descripcion = $request->input('Descripción');
+    */
     }
 
     /**
