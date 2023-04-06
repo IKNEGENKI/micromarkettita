@@ -7,7 +7,10 @@ import { ContentHome } from './ContentHome';
 export const Home = () => {
   return (
     <>
-      <ContentHome/>
+    <center className='responsive'>
+    <ContentHome/>
+    </center>
+      
        
     </>
   )

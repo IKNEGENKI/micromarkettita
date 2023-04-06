@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {AiFillFileAdd} from "react-icons/ai"
+import {BiHomeHeart} from "react-icons/bi"
+import {VscNotebook} from "react-icons/vsc"
+import {BsFillTrash3Fill} from "react-icons/bs"
+import {BsShop} from "react-icons/bs"
+import {HiClipboardDocumentList} from "react-icons/hi2"
+import {MdSell} from "react-icons/md"
 ReactDOM.render(
   <React.StrictMode>
     <App />
