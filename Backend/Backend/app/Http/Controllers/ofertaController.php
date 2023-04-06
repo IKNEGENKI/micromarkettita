@@ -22,9 +22,22 @@ class ofertaController extends Controller
      */
     public function store(Request $request)
     {
-        $oferta = new modeloOferta ($request->all());
+        $rules = [
+            'Producto' => 'required|min:2|max:20',
+            'Precio de Venta(bs)' =>'required|numeric|money',
+            'Inicio de oferta' => 'required|date',
+            'Fin oferta' => 'required|date',
+            'Descripción'=>'required|min:10|max:100',
+        ];
+    
+        $validatedData = $request->validate($rules);
+    
+        $oferta = new modeloOferta();
+        $oferta->descripcion = $request->input('Descripción');
+        $oferta->fechaIni = $request->input('Inicio de oferta');
+        $oferta->fechaFin = $request->input('Fin oferta');
+        $oferta->precioventa = $request->input('Precio de Venta(bs)');
         $oferta->save();
-        return $oferta;
     }
 
     /**

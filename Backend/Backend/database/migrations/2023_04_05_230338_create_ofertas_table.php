@@ -15,9 +15,10 @@ return new class extends Migration
             $table->string('codOferta', 5)->primary();
             $table->string('codprod');
             $table->foreign('codprod')->references('codprod')->on('producto');
-            $table->string('descuento');
+            $table->string('descripcion');
             $table->date('fechaentrada');
             $table->date('fechavencimiento');
+            $table->unsignedInteger('precioVenta');
         });
     }
 

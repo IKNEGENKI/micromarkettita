@@ -69,9 +69,19 @@ class productosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $nombrepr)
     {
-        //
+        $prod = modeloProducto::findOrFail($nombrepr); // encontrar el usuario por el ID
+
+        $prod->nombre = $request->input( 'Nombre de producto');
+        $prod->codprod = $request->input('Código de producto');
+        $prod->categoria = $request->input('Categoria');
+        $prod->descripcion = $request->input('Descripción');
+        $prod->precioventa = $request->input('Precio de Venta(bs)');
+        $prod->perciocompra= $request->input('Precio de Compra(bs)');
+        $prod->marca = $request->input('Marca');
+    
+        $prod->save(); // guardar los cambios en la base de datos
     }
 
     /**

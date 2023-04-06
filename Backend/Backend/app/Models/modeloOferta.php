@@ -12,8 +12,9 @@ class modeloOferta extends Model
     protected $fillable = [
         'codOferta',
         'codprod',
-        'descuento',
+        'descripcion',
         'fechaIni',
         'fechaFin',
+        'precioVenta',
     ];
 }
