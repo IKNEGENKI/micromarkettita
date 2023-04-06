@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\modeloTienda;
+use App\models\modeloTienda;
 class tiendasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
         return modeloTienda::all();
@@ -19,18 +17,18 @@ class tiendasController extends Controller
      */
     public function create()
     {
-        // Crea un nuevo usuario con los datos del formulario
-    /*$tienda = new modeloTienda;
-    $tienda->codTienda='TIT01';
-    $tienda->nombre = $request->input();
-    $tienda->Dirección = $request->input('direccion');
-    $tienda->numero = $request->input('numero');
-    $tienda->propietario = $request->input('Nombre del propietario');
-    $tienda->correo = $request->input('Correo electronico');
-    $tienda->Descripcion = $request->input('Descripción');
-    */
+        $tienda = new modeloTienda();
+        $tienda-> codcat = "td001";
+        $tienda-> nombre->input('Nombre');
+        $tienda-> direccion->input('Dirección');
+        $tienda-> Numero->input('Numero');
+        $tienda-> propietario->input('Nombre del propietario');
+        $tienda-> Descripcion->input('Descripción');
+        $tienda-> correo->input('Correo electrónico');
+        // Guarda el usuario en la base de datos
+        $tienda->save();
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
@@ -49,16 +47,9 @@ class tiendasController extends Controller
         return modeloTienda::find($id);
     }
 
+    
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Update 
      */
     public function update(Request $request, string $id)
     {
@@ -70,7 +61,7 @@ class tiendasController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * delete
      */
     public function destroy(string $id)
     {

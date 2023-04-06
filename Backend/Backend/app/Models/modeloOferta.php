@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class modeloTienda extends Model
+class modeloOferta extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'codtienda',
-        'nombre',
-        'dirección',
-        'Numero',
-        'propietario',
-        'Descripcion',
-        'correo',
-        
+        'codOferta',
+        'codprod',
+        'descuento',
+        'fechaIni',
+        'fechaFin',
     ];
 }

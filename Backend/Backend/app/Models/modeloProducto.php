@@ -10,9 +10,9 @@ class modeloProducto extends Model
     use HasFactory;
 
     protected $fillable = [
+
         'codprod',
         'codcat',
-        'condinventario',
         'nombrepr',
         'marca',
         'descripcion',

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\modeloProducto;
-class productoController extends Controller
+use App\Models\modeloProducto;
+class productosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,22 +14,38 @@ class productoController extends Controller
         return modeloProducto::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+   
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $producto = new modeloProducto($request->all());
+        $rules = [
+            'Nombre de producto' => 'required|min:6|max:20',
+            'Código de producto' => 'required|min:1|max:6',
+            'Categoria' => 'required|min:1|max:6',
+            'Descripción' => 'required|min:25|max:100',
+            'Precio de Venta(bs)'=>'required|numeric|money',
+            'Precio de Compra(bs)'=>'required|numeric|money',
+            'Marca' => 'required|min:3|max:20',
+            'Imagen' => 'required|max:25',
+            //'Cantidad Total'=>'required|numeric',
+        ];
+    
+        $validatedData = $request->validate($rules);
+    
+        $producto = new modeloProducto;
+        $producto->nombre = $request->input( 'Nombre de producto');
+        $producto->codprod = $request->input('Código de producto');
+        $producto->categoria = $request->input('Categoria');
+        $producto->descripcion = $request->input('Descripción');
+        $producto->precioventa = $request->input('Precio de Venta(bs)');
+        $producto->perciocompra= $request->input('Precio de Compra(bs)');
+        $producto->marca = $request->input('Marca');
+       // $producto->catidadtotal = $request->input('cantidad');
         $producto->save();
-        return $producto;
+    
     }
 
     /**
@@ -37,7 +53,7 @@ class productoController extends Controller
      */
     public function show(string $id)
     {
-        return modeloProducto::find($id);
+        //
     }
 
     /**
@@ -53,11 +69,7 @@ class productoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $producto = modeloProducto::find($id);
-        if(!is_null($producto)){
-            $producto->update($request->all());
-            return $producto;
-        }
+        //
     }
 
     /**
@@ -65,7 +77,7 @@ class productoController extends Controller
      */
     public function destroy(string $id)
     {
-        $producto = modeloProducto::find($id);
-        $producto->delete();
+        $prod = modeloProducto::find($id);
+        $prod->delete();
     }
 }
