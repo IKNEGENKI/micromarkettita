@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-
+import '../css/OfertaNueva.css';
 
 //import logo from '../imagenes/registroicono.png';
 
@@ -30,10 +30,10 @@ export const OfertaNueva = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+   
     
     
-
+    
     handleReset();
   };
   const handleReset = () => {
@@ -43,10 +43,12 @@ export const OfertaNueva = () => {
     setInicio("");
     setFin("");
     setDescripcion("");
+    
+    window.location.href = '/home';
   };
   
   return (
-    <div className='responsive'>
+    <div id='fondo' className='responsive'>
       
         
       
@@ -64,17 +66,17 @@ export const OfertaNueva = () => {
           </datalist>
           <br />
           <label htmlFor="precio" >Precio de Venta(bs)*</label>
-          <input type='number' className="form-control " id="precio" step="0.01"placeholder='precio*' min="0.1" max="999999"  required value={precio} onChange={(e) => setPrecio(e.target.value)} />
+          <input type='number' className="form-control " id="precio" step="0.01" min="0.1" max="999999"  required value={precio} onChange={(e) => setPrecio(e.target.value)} />
           <br />
           
           </div>
 
           <div className='col'>
           <label htmlFor="inicio">Inicio de Oferta*</label>
-          <input type="date" className="form-control " name="ini" min={formattedDate} max={maxFecha} id="inicio" placeholder='fecha-inicio*'required value={inicio} onChange={(e) => setInicio(e.target.value)} />
+          <input type="date" className="form-control " name="ini" min={formattedDate} max={maxFecha} id="inicio" required value={inicio} onChange={(e) => setInicio(e.target.value)} />
           <br />
           <label htmlFor="fin">Fin de Oferta*</label>
-          <input type= "date" className="form-control "  min={inicio} max={maxFecha} id="fin" placeholder='fecha-fin*'required value={fin} onChange={(e) => setFin(e.target.value)} />
+          <input type= "date" className="form-control "  min={inicio} max={maxFecha} id="fin" required value={fin} onChange={(e) => setFin(e.target.value)} />
           <br />
           
           </div>
@@ -82,13 +84,13 @@ export const OfertaNueva = () => {
           </div>
           <br />
           <label htmlFor="descripcion" className='container text-center'>Descripción*</label>
-          <input type="text"className="form-control "  id="descripcion" placeholder='descripcion*'minlength="10" maxlength="100"required value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
+          <input type="text"className="form-control "  id="descripcion" minlength="10" maxlength="100"required value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
           
           <br />
           <br />
           
-          <button type="submit"  className="btn btn-primary mx-5">Guardar</button>
-          <button type="button" onClick={handleReset} id='borrar' className="btn btn-danger mx-5">Cancelar</button>
+          <button type="submit" id='guardar' className="btn  mx-5">Guardar</button>
+          <button type="button" onClick={handleReset} NavLink to="/home" id='borrar' className="btn  mx-5">Cancelar</button>
          
         </form>
       </div>
