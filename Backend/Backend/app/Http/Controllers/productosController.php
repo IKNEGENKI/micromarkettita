@@ -53,7 +53,9 @@ class productosController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $sql = 'SELECT * FROM producto WHERE codprod = $id';
+        $producto = DB::select($sql);
+        return $producto;
     }
 
     /**

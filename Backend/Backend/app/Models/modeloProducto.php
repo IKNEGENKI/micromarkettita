@@ -17,7 +17,7 @@ class modeloProducto extends Model
         'marca',
         'descripcion',
         'precioventa',
-        'preciocompra',
+        //'preciocompra',
         'cantidadtotal',
         'image_path',
     ];

@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\modeloCategoria;
+use Illuminate\Support\Facades\DB;
 
 class categoriaController extends Controller
 {
    
     public function index()
     {
-        return modeloCategoria::all();
+        $sql = 'SELECT * FROM categoria';
+        $categoria = DB::select($sql);
+        return $categoria;
     }
     /**
      * Store  
@@ -27,7 +30,9 @@ class categoriaController extends Controller
      */
     public function show(string $id)
     {
-        return modeloCategoria::find($id);
+        $sql = 'SELECT * FROM categoria WHERE codcat = $id';
+        $categoria = DB::select($sql);
+        return $categoria;
     }
 
     
@@ -37,11 +42,7 @@ class categoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $categoria = modeloCategoria::find($id);
-        if(!is_null($categoria)){
-            $categoria->update($request->all());
-            return $categoria;
-        }
+    
     }
 
     /**

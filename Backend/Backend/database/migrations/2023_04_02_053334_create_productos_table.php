@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('marca');
             $table->string('descripcion');
             $table->decimal('precioventa', 10, 2);
-            $table->decimal('preciocompra', 10, 2);
+            //$table->decimal('preciocompra', 10, 2);
             $table->unsignedInteger('cantidadtotal');
             $table->string('image_path')->nullable();
 
