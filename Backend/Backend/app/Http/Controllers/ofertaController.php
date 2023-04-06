@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\modeloProducto;
+use App\Models\modeloOferta;
 
-class productosController extends Controller
+class ofertaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return modeloProducto::all();
+        return modeloOferta::all();
     }
 
    
@@ -22,9 +22,9 @@ class productosController extends Controller
      */
     public function store(Request $request)
     {
-        $producto = new modeloProducto ($request->all());
-        $producto->save();
-        return $producto;
+        $oferta = new modeloOferta ($request->all());
+        $oferta->save();
+        return $oferta;
     }
 
     /**
@@ -32,7 +32,7 @@ class productosController extends Controller
      */
     public function show(string $id)
     {
-        return modeloProducto::find($id);
+        return modeloOferta::find($id);
     }
 
     /**
@@ -40,7 +40,7 @@ class productosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return modeloProducto::find($id);
+        return modeloOferta::find($id);
     }
 
     /**
@@ -48,10 +48,10 @@ class productosController extends Controller
      */
     public function destroy(string $id)
     {
-        $producto = modeloProducto::find($id);
-        if(!is_null($producto)){
-            $producto->update($request->all());
-            return $producto;
+        $oferta = modeloOferta::find($id);
+        if(!is_null($oferta)){
+            $oferta->update($request->all());
+            return $oferta;
         }
     }
 }
