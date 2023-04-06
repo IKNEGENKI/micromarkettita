@@ -12,13 +12,12 @@ import '../css/OfertaNueva.css';
 export const RegistrarProductoNuevo = () => {
 
     
-
-  const [producto, setProducto] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [categoria, setCategoria] = useState("");
   const [precio, setPrecio] = useState("");
-  const [inicio, setInicio] = useState('');
-  const [fin, setFin] = useState("");
+  const [codigo, setCodigo] = useState('');
   const [descripcion, setDescripcion] = useState("");
-  
+  const [marca, setMarca] = useState("");
 
 
   const handleSubmit = (event) => {
@@ -33,22 +32,23 @@ export const RegistrarProductoNuevo = () => {
     };
     const handleReset = () => {
   
-      setProducto("");
+      setNombre("");
+      setCategoria("");
       setPrecio("");
-      setInicio("");
-      setFin("");
+      setCodigo("");
+      setMarca("");
       setDescripcion("");
     };
     
     handleReset();
   };
   const handleReset = () => {
-
-    setProducto("");
-    setPrecio("");
-    setInicio("");
-    setFin("");
-    setDescripcion("");
+    setNombre("");
+      setCategoria("");
+      setPrecio("");
+      setCodigo("");
+      setMarca("");
+      setDescripcion("");
     
     window.location.href = '/home';
   };
@@ -66,30 +66,40 @@ export const RegistrarProductoNuevo = () => {
             <div className='row align-items-start'>
             <div className='col'>
             <label htmlFor="producto" > Nombre de Producto*</label>
-            <input type='text' className="form-control "  id="producto" minlength="2" maxlength="25" required  name="producto" value={producto} onChange={(e) => setProducto(e.target.value)} />
+            <input type='text' pattern="[A-Za-z]+" className="form-control "  id="nombre" minlength="2" maxlength="25" required  name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
           
             <br />
-            <label htmlFor="precio" >Codigo de Producto*</label>
+            <label htmlFor="codigo" >Codigo de Producto*</label>
             <br></br>
-            <input type='number' className="form-control " id="Codigo" step="0.01"placeholder='precio*' min="0.1" max="999999"  required value={precio} onChange={(e) => setPrecio(e.target.value)} />
+            <input type='text' pattern="[0-9]+" className=" form-control " id="codigo" step="1" placeholder='codigo*' min="1" max="999999" required value={codigo}  onChange={(e) => setCodigo(e.target.value)} />
            
             <br />
 
-            <label htmlFor="producto" >Producto*</label>
-            <input list="productos" className="form-control "  id="producto" minlength="1" maxlength="20" required  name="producto" value={producto} onChange={(e) => setProducto(e.target.value)} />
+            <label htmlFor="categoria" >Categoria*</label>
+            <input type='text' pattern="[A-Za-z]" list="productos" className="form-control "  id="categoria" required  name="categoria"  value={categoria} onChange={(e) => setCategoria(e.target.value)} />
             <datalist id="productos">
-              <option value="Manzana" />
-              <option value="Banana" />
-              <option value="Fresa" />
-              <option value="Mango" />
+              <option value="Abarrotes" />
+              <option value="Bebidas" />
+              <option value="Bebidas alcoholicas" />
+              <option value="Cuidado personal" />
+              <option value="Enlatados" />
+              <option value="Farmacos" />
+              <option value="Fiambres y embutidos" />
+              <option value="Golosinas" />
+              <option value="Limpieza del hogar" />
+              <option value="Cuidado personal" />
+              <option value="Lacteos" />
+              <option value="Panaderia" />
+              <option value="Snacks" />
+              <option value="Varios" />
             </datalist>
             
             </div>
   
             <div className='col'>
 
-            <label htmlFor="fin">Precio de venta (bs)*</label>
-            <input type='number' className="form-control " id="precio" step="0.01"placeholder='precio*' min="0.1" max="999999"  required value={precio} onChange={(e) => setPrecio(e.target.value)} />
+            <label htmlFor="precio">Precio de venta (bs)*</label>
+            <input type='number' className="form-control " id="precio" step="0.10" placeholder='precio*' min="0.1" max="999999"  required value={precio} onChange={(e) => setPrecio(e.target.value)} />
             <br></br> 
             Imagen*
             <br></br>
@@ -98,7 +108,7 @@ export const RegistrarProductoNuevo = () => {
             <br></br> 
             <br></br> 
             <label htmlFor="fin">Marca*</label>
-            <input type='text' className="form-control "  id="producto" minlength="2" maxlength="25" required  name="producto" value={producto} onChange={(e) => setProducto(e.target.value)} />
+            <input type='text' className="form-control "  id="Marca" minlength="2" maxlength="25" required  name="marca" value={marca} onChange={(e) => setMarca(e.target.value)} />
           
             <br />
             
