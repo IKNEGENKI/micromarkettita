@@ -1,6 +1,6 @@
 #borrar{
 
-    background-color: #F40707;
+    background-color:#A6A9B6;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -13,7 +13,7 @@
 }
 #guardar{
 
-    background-color: #052840;
+    background-color: #7868E6;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -48,4 +48,18 @@
  border-radius: 5px;
  padding: 20px;
 
+}
+
+#deleteImg{
+
+    height: 30;
+    width: 150;
+    color: #FFFFFF;
+    background-color:rgb(156, 156, 156);
+    border: 0ch;
+    cursor: pointer;
+}
+
+#imgProd{
+    
 }

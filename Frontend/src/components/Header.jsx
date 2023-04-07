@@ -10,77 +10,84 @@ import {BsShop} from "react-icons/bs"
 import {HiClipboardDocumentList} from "react-icons/hi2"
 import {MdSell} from "react-icons/md"
 import {BiHomeHeart} from "react-icons/bi"
+import { FaStore } from "react-icons/fa" ;   
+import { TiThMenu } from "react-icons/ti";
 export const Header = () => {
   return (
     <>  
     
- 
-<header>
-
-        
-        <div class="icon__menu">
-        <i class="fas fa-bars" id="btn_open"></i>
-        </div>
-    </header>
-
+   
+    <head>
+       <title>MicroMarket TITA</title>
+     </head>
     <body id="body">
+
+        <header>
+            <div class="icon__menu">
+                <i id="btn_open"><TiThMenu/></i>
+             </div>
+        </header>
         
-        <div class="items"> 
+        <div class="items" id="menu_side"> 
         
-        <div class="name__page">
-            <i class="fa-solid fa-store"></i>
-            <h4>MicroMarket TITA</h4>
-        </div>
+        
             <nav className="menu navbar-expand-lg" >
            
+            <div id="tienda">
+                            <i><FaStore/></i>
+                             <a class ="button"> SuperMarket TITA </a>
+              </div>
             
-            
-                <div class="options__menu"> 
+            <div class="options__menu" id="menu_side"> 
                     
-                    <a href = "#">
+                <a href = "#">
+                        
+                    </a>
+
+                    <a href = "#" class="selected">
                         <div class="option">
-                            <i><BiHomeHeart/></i>
+                            <i><NavLink to="/home" id = "botonBarra"><BiHomeHeart/></NavLink></i>
                              <a class ="button"><NavLink to="/home" className="nav-item nav-link text-center" >Inicio</NavLink></a>
                         </div>
                         
                     </a>
 
-                    <a href = "#">
+                    <a href = "#" class="selected">
                         <div class="option">
-                            <i><VscNotebook/></i>
+                            <i><NavLink to="/registrarProductoN" id = "botonBarra"><VscNotebook/></NavLink></i>
                              <a class ="button"><NavLink to="/registrarProductoN" className="nav-item nav-link text-center" >Registrar Producto</NavLink></a>
                         </div>
                         
                     </a>
 
-                    <a href = "#">
+                    <a href = "#" class="selected">
                         <div class="option">
-                            <i><BsFillTrash3Fill/></i>
+                            <i><NavLink to="/eliminarProducto" id = "botonBarra"><BsFillTrash3Fill/></NavLink></i>
                              <a class ="button"><NavLink to="/eliminarProducto" className="nav-item nav-link text-center" >Eliminar producto</NavLink></a>
                         </div>
                         
                     </a>
 
-                    <a href = "#">
+                    <a href = "#" class="selected">
                         <div class="option">
-                            <i><HiClipboardDocumentList/></i>
+                            <i><NavLink to="/listaProducto" id = "botonBarra"><HiClipboardDocumentList/></NavLink></i>
                              <a class ="button"><NavLink to="/listaProducto" className="nav-item nav-link text-center" >Lista de Productos</NavLink></a>
                         </div>
                         
                     </a>
 
-                    <a href = "#">
+                    <a href = "#" class="selected">
                         <div class="option">
-                            <i><BsShop/></i>
+                            <i><NavLink to="/modificarDatosN" id = "botonBarra"><BsShop/></NavLink></i>
                              <a class ="button"><NavLink to="/modificarDatosN" className="nav-item nav-link text-center" >Modificar datos de negocio</NavLink></a>
                         </div>
                         
                     </a>
 
-                    <a href = "#">
+                    <a href = "#" class="selected">
                         <div class="option">
-                            <i><MdSell/></i>
-                             <a class ="button"><NavLink to="/ofertaNueva " className ="nav-item nav-link text-center" >Registrar oferta nueva</NavLink></a>
+                            <i><NavLink to="/ofertaNueva " id = "botonBarra"> <MdSell/> </NavLink></i>
+                             <a class ="button" id="oferta"><NavLink to="/ofertaNueva " className ="nav-item nav-link text-center" >Registrar oferta nueva</NavLink></a>
                         </div>
                         
                     </a>
@@ -89,6 +96,7 @@ export const Header = () => {
 
             </nav>
         </div>
+        <script src="../config/barra.js"></script>
         </body>
     </>
     

@@ -111,8 +111,8 @@ export const OfertaNueva = () => {
             <br />
             <br />
             
-            <button type="submit"  className="btn mx-5" class='guardar'>Guardar</button>
-            <button type="button" onClick={handleReset} class='borrar' className="btn mx-5">Cancelar</button>
+            <button type="submit"  className="btn mx-5" id='guardar'>Guardar</button>
+            <button type="button" onClick={handleReset} id='borrar' className="btn mx-5">Cancelar</button>
            
           </form>
         </div>

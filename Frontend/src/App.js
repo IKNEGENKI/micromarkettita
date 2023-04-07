@@ -10,6 +10,7 @@ import {ListaDeProducto} from './components/ListaDeProductos';
 import {ModificarDatosDelNegocio} from './components/ModificarDatosDelNegocio';
 import {OfertaNueva} from './components/OfertaNueva';
 import { RegistrarProductoNuevo } from './components/RegistrarProductoNuevo';
+import {ProductoNuevo} from './components/ProductoNuevo';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route exact path="/listaProducto" element={<ListaDeProducto/>}/>
           <Route exact path="/modificarDatosN" element={<ModificarDatosDelNegocio/>}/>
           <Route exact path="/ofertaNueva" element={<OfertaNueva/>}/>
-          <Route exact path="/registrarProductoN" element={<RegistrarProductoNuevo/>}/>
+          <Route exact path="/registrarProductoN" element={<ProductoNuevo/>}/>
           <Route exact path="*" element={<ErrorNotFound/>}/>
         </Routes>
       </BrowserRouter>

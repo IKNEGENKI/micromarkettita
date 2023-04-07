@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import '../css/OfertaNueva.css';
-
 //import logo from '../imagenes/registroicono.png';
 
 
@@ -63,7 +62,7 @@ export const ModificarDatosDelNegocio = () => {
   return (
     <div id='fondo' className='responsive'>
       
-        
+      <script src='./config/script.js'></script>
           
         
           <form className='container text-center' id="formulario" onSubmit={handleSubmit}>
@@ -77,7 +76,8 @@ export const ModificarDatosDelNegocio = () => {
             <br />
 
             <label htmlFor="direccion" > Direccion*</label>
-            <input type='text' className="form-control "  id="direccion" minlength="5" maxlength="30" required  name="direccion" value={direccion} onChange={(e) => setDireccion(e.target.value)} />
+            <input type='text' className="form-control "  id="direccion" minlength="5" maxlength="30" required  name="direccion" value={direccion} onChange={(e) => setDireccion(e.target.value)}
+              />
             <br />
 
             <label htmlFor="propietario" > Nombre del propietario*</label>
@@ -115,12 +115,14 @@ export const ModificarDatosDelNegocio = () => {
             <br />
             <br />
             
-            <button type="submit"  className="btn mx-5" class='guardar'>Guardar</button>
-            <button type="button" onClick={handleReset} class='borrar' className="btn mx-5">Cancelar</button>
+            <button type="submit"  className="btn mx-5" id='guardar'>Guardar</button>
+            <button type="button" onClick={handleReset} id='borrar' className="btn mx-5">Cancelar</button>
            
           </form>
+
+        
+          
         </div>
-      
     )
   }
   //export const RegistrarOfertaNueva();
