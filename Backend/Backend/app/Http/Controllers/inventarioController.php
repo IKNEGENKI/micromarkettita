@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\modeloInventario;
+use App\models\inventario;
 class inventarioController extends Controller
 {
    

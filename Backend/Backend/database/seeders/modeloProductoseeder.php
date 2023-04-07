@@ -31,6 +31,17 @@ class modeloProductoseeder extends Seeder
         $producto -> nombrecadescripcion = 'lacteo';
         $producto -> save();
 
+        $producto1 = new producto();
+        $producto1 -> codprod = '1';
+        $producto1 -> nombrepr = 'lacteo';
+        $producto1 -> marca = '1';
+        $producto1 -> descripcion = 'lacteo';
+        $producto1 -> precioventa = '1';
+        $producto1 -> cantidadtotal = 'lacteo';
+        $producto1 -> marca = '1';
+        $producto1 -> nombrecadescripcion = 'lacteo';
+        $producto1 -> save();
+
       
     }
 }

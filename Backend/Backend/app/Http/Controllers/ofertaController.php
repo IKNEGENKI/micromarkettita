@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\modeloOferta;
+use App\Models\oferta;
 
 class ofertaController extends Controller
 {
