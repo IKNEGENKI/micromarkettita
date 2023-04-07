@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\modeloProducto;
+use App\Models\producto;
 class productosController extends Controller
 {
     /**
@@ -27,7 +27,7 @@ class productosController extends Controller
             'Categoria' => 'required|min:1|max:6',
             'Descripción' => 'required|min:25|max:100',
             'Precio de Venta(bs)'=>'required|numeric|money',
-            'Precio de Compra(bs)'=>'required|numeric|money',
+          //  'Precio de Compra(bs)'=>'required|numeric|money',
             'Marca' => 'required|min:3|max:20',
             'Imagen' => 'required|max:25',
             //'Cantidad Total'=>'required|numeric',
@@ -36,14 +36,15 @@ class productosController extends Controller
         $validatedData = $request->validate($rules);
     
         $producto = new modeloProducto;
+        
         $producto->nombre = $request->input( 'Nombre de producto');
         $producto->codprod = $request->input('Código de producto');
         $producto->categoria = $request->input('Categoria');
         $producto->descripcion = $request->input('Descripción');
         $producto->precioventa = $request->input('Precio de Venta(bs)');
-        $producto->perciocompra= $request->input('Precio de Compra(bs)');
+        //$producto->perciocompra= $request->input('Precio de Compra(bs)');
         $producto->marca = $request->input('Marca');
-       // $producto->catidadtotal = $request->input('cantidad');
+        // $producto->catidadtotal = $request->input('cantidad');
         $producto->save();
     
     }

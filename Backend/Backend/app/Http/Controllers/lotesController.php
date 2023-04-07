@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\modeloLote;
+use App\models\lote;
 class lotesController extends Controller
 {
 

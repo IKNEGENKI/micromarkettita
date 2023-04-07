@@ -27,46 +27,40 @@ export const OfertaNueva = () => {
   // Agregar un año a la fecha actual
   const maxFecha = new Date(hoy.getFullYear() + 1, hoy.getMonth(), hoy.getDate()).toISOString().split('T')[0];
 
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-   
-    
-    
-    const today = new Date();
-    const formattedDate = today.toISOString().slice(0, 10);
-  
-    const hoy = new Date();
-  
-    // Agregar un año a la fecha actual
-    const maxFecha = new Date(hoy.getFullYear() + 1, hoy.getMonth(), hoy.getDate()).toISOString().split('T')[0];
-  
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      handleReset();
-    };
-    const handleReset = () => {
-  
+      window.alert('Acción realizada exitosamente');
       setProducto("");
       setPrecio("");
       setInicio("");
       setFin("");
       setDescripcion("");
+      window.location.href = '/home';
+    };
+    const handleReset = () => {
+
+      if((precio||producto||inicio||fin||descripcion) != ""){
+        const confirmacion = window.confirm('¿Está seguro de que desea realizar esta acción?');
+      if (confirmacion) {
+        window.alert('Acción realizada exitosamente');
+      setProducto("");
+      setPrecio("");
+      setInicio("");
+      setFin("");
+      setDescripcion("");
+      window.location.href = '/home';
+      } else {
+        window.alert('Acción cancelada');
+      }
+      }else{
+        window.location.href = '/home';
+      }
+      
     };
     
-    handleReset();
-  };
-  const handleReset = () => {
-
-    setProducto("");
-    setPrecio("");
-    setInicio("");
-    setFin("");
-    setDescripcion("");
-    
-    window.location.href = '/home';
-  };
+   
+  
   
   return (
     <div id='fondo' className='responsive'>
@@ -111,7 +105,7 @@ export const OfertaNueva = () => {
             <br />
             <br />
             
-            <button type="submit"  className="btn mx-5" id='guardar'>Guardar</button>
+            <button type="submit" onClick={handleSubmit} className="btn mx-5" id='guardar'>Guardar</button>
             <button type="button" onClick={handleReset} id='borrar' className="btn mx-5">Cancelar</button>
            
           </form>

@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import '../css/ListaDeProducto.css';
 import iconoModificar from '../images/iconoModificar.png';
+import ModificarProducto from './ModificarProducto';
 
 export const ListaDeProducto = () => {
     const items = ["Sprite 3L", "Pepsi 3L", "Fanta 3L","CocaCola 3L"];
     
+    const pulsarModificar = () => {
+        <ModificarProducto />
+      };
     return (
         <center id='fondo' className='responsive '>
             <div id='lista' className='container'>
@@ -21,7 +25,7 @@ export const ListaDeProducto = () => {
             <h3>{item}</h3>
             </div>
             <div className='col-4'>
-           <a  href="">
+           <a onClick={pulsarModificar}>
              <img id='icono' src={iconoModificar} alt="click aqui para modificar" />
            </a>
            </div>
