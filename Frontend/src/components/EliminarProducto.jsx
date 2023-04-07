@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom'
+import { Modal, Button } from 'react-bootstrap';
 //dentro de la funcion return va el codigo que se va a ejecutar
 export const EliminarProducto = () => {
 
@@ -54,16 +54,22 @@ export const EliminarProducto = () => {
     setProductoEliminado(false);
   };
 
-
   return (
     <div className='responsive'>
       {productoEliminado ? (
-        <div className='container text-center'>
-          <h3>Se ha eliminado <br /> el (los) producto(s) con éxito</h3>
-          <button onClick={handleVolver} className='btn btn-primary mx-5'>
-            Volver
-          </button>
-        </div>
+        <Modal show={productoEliminado} onHide={handleVolver}>
+          <Modal.Header >
+            
+          </Modal.Header>
+          <Modal.Body className="text-center">
+            <p>Se ha eliminado <br/> el (los) producto(s) con éxito</p>
+          </Modal.Body>
+          <Modal.Footer className="d-flex justify-content-center">
+            <Button variant='primary' onClick={handleVolver}>
+              Volver
+            </Button>
+          </Modal.Footer>
+        </Modal>
       ) : (
         <form className='container text-center' onSubmit={handleSubmit}>
           <h1>Eliminar Producto</h1>
@@ -88,13 +94,17 @@ export const EliminarProducto = () => {
               </ul>
             </div>
           </div>
+          <br/>
           <br />
-          <br />
-          <button type='submit' className='btn btn-primary mx-5'> Eliminar</button>
-          <button type="button" onClick={handleReset} class='borrar' className="btn mx-5">Cancelar</button>
-          
-      </form>
-      )}
-      </div>
+
+      <button type='submit' className='btn btn-primary mx-5'>
+        Eliminar
+      </button>
+      <button type='button' onClick={handleReset} id='borrar' className='btn btn-danger mx-5'>
+        Cancelar
+      </button>
+    </form>
+  )}
+</div>
 )   
 }
