@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\inventario;
+use Illuminate\Support\Facades\DB;
+
 class inventarioController extends Controller
 {
    
     public function index()
     {
-        return modeloInventario::all();
+        $sql = 'SELECT * FROM inventario';
+        $inventario = DB::select($sql);
+        return $inventario;
     }
     /**
      * Store a newly created resource in storage.

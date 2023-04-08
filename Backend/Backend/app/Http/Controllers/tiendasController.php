@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\tienda;
+use Illuminate\Support\Facades\DB;
 class tiendasController extends Controller
 {
     
     public function index()
     {
-        return tienda::all();
+        $sql = 'SELECT * FROM tienda';
+        $tienda = DB::select($sql);
+        return $tienda;
     }
 
     /**

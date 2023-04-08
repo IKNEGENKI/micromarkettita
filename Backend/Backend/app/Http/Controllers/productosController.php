@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\producto;
+use Illuminate\Support\Facades\DB;
 
 class productosController extends Controller
 {
@@ -12,7 +13,9 @@ class productosController extends Controller
      */
     public function index()
     {
-        return producto::all();
+        $sql = 'SELECT * FROM producto';
+        $producto = DB::select($sql);
+        return $producto;
     }
 
    

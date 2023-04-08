@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\oferta;
+use Illuminate\Support\Facades\DB;
 
 class ofertaController extends Controller
 {
@@ -12,7 +13,9 @@ class ofertaController extends Controller
      */
     public function index()
     {
-        return oferta::all();
+        $sql = 'SELECT * FROM oferta';
+        $oferta = DB::select($sql);
+        return $oferta;
     }
 
    

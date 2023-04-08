@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\lote;
+use Illuminate\Support\Facades\DB;
+
 class lotesController extends Controller
 {
 
     public function index()
     {
-        return lote::all();
+        $sql = 'SELECT * FROM lote';
+        $lote = DB::select($sql);
+        return $lote;
     }
     
     /**
