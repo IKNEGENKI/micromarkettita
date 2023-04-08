@@ -1,16 +1,13 @@
 
 import React, { useState } from 'react';
 import '../css/OfertaNueva.css';
-<<<<<<< HEAD
 import {Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from '../elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../components/Input';
 //import '../css/OfertaNueva.css';
 import '../css/estilos.css';
-=======
 import { Modal, Button } from 'react-bootstrap';
->>>>>>> 8abfbfd8765aff7ccb5110a6a954992f8af10b96
 //import logo from '../imagenes/registroicono.png';
 
 

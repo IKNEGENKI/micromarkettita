@@ -8,6 +8,7 @@ import '../css/ventanaImagen.css';
 //import '../'
 //import '../css/OfertaNueva.css';
 import '../css/estilos.css';
+import { Modal } from 'react-bootstrap';
 export const ProductoNuevo = () => {
 	const [producto, cambiarProducto] = useState({campo: '', valido: null});
 	const [codigo, cambiarCodigo] = useState({campo: '', valido: null});
@@ -180,7 +181,6 @@ export const ProductoNuevo = () => {
              type="file"
              onChange={(e) => handleChange(e.target)}
              ></input>
-			
             {images.map((row,index) =>
             <div key={index}>
               <br></br>
