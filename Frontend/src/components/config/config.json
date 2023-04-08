@@ -1,7 +1,0 @@
-{
-    "CATEGORI_API_URL" : "http://127.0.0.1:8000/api/api_categoria",
-    "PRODUCTO_API_URL" : "http://127.0.0.1:8000/api/api_producto",
-    "TIENDA_API_URL" : "http://127.0.0.1:8000/api/api_tienda",
-    "LOTE_API_URL" : "http://127.0.0.1:8000/api/api_lote",
-    "OFERTA_API_URL" : "http://127.0.0.1:8000/api/api_oferta"
-}

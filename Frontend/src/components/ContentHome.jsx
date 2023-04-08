@@ -6,12 +6,13 @@ import micromarket from '../images/micromarket.jpg'
 export const ContentHome = () => {
   return (
     <div className='home'>
-        
-                <img src={micromarket} className="card-img-top" alt="..."/>
+                <center>
+                <img src={micromarket} className="card-img-top" alt="..." style={{height: 500}}/>
                 <div className="card-body">
                     <h5 className="card-title">Micromarket TITA</h5>
                     <p className="card-text" style={{textAlign:"justify"}}>En micromercado TITA podrás encontrar gran variedad de productos de la canasta familiar y al mejor precio!!</p>
                 </div>
+                </center>
             
     </div>
   )
