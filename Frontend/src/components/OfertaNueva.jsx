@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import '../css/OfertaNueva.css';
+import { Modal, Button } from 'react-bootstrap';
 
 //import logo from '../imagenes/registroicono.png';
 
@@ -30,37 +31,87 @@ export const OfertaNueva = () => {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      window.alert('Acción realizada exitosamente');
+     
       setProducto("");
       setPrecio("");
       setInicio("");
       setFin("");
       setDescripcion("");
-      window.location.href = '/home';
+      handleFirstModalShow();
+      
     };
     const handleReset = () => {
 
       if((precio||producto||inicio||fin||descripcion) != ""){
-        const confirmacion = window.confirm('¿Está seguro de que desea realizar esta acción?');
-      if (confirmacion) {
-        window.alert('Acción realizada exitosamente');
-      setProducto("");
-      setPrecio("");
-      setInicio("");
-      setFin("");
-      setDescripcion("");
-      window.location.href = '/home';
-      } else {
-        window.alert('Acción cancelada');
-      }
+        handleSecondModalShow();
       }else{
         window.location.href = '/home';
       }
       
     };
     
+    function FirstModal(props) {
+      return (
+        <Modal show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title></Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>La oferta ha sido registrada con exito</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleFirstModalClose}>
+              Volver
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      );
+    }
+    function SecondModal(props) {
+      return (
+        <Modal show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Cancelar Rewgistrar Oferta</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>¿Seguro que quiere salir del formulario sin guardar los datos ?</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleSecondModalClose}>
+              Cancelar
+            </Button>
+            <Button variant="secondary" onClick={handleSecondModalBorrar}>
+             Aceptar
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      );
+    }
+  const [showFirstModal, setShowFirstModal] = useState(false);
+  const [showSecondModal, setShowSecondModal] = useState(false);
+
+  const handleFirstModalClose = () => {
+    
+    setShowFirstModal(false);
+    window.location.href = '/home';
+  }
+  const handleSecondModalClose = () => setShowSecondModal(false);
+  const handleSecondModalBorrar=()=>{
+
+    setPrecio ('');
+    setProducto('');
+    setInicio('');
+    setFin('');
+    setDescripcion('');
+    handleSecondModalClose();
+    window.location.href = '/home';
+
+  }
+
+  const handleFirstModalShow = () => setShowFirstModal(true);
+  const handleSecondModalShow = () => setShowSecondModal(true);
+        
    
-  
   
   return (
     <div id='fondo' className='responsive'>
@@ -105,10 +156,13 @@ export const OfertaNueva = () => {
             <br />
             <br />
             
-            <button type="submit" onClick={handleSubmit} className="btn mx-5" id='guardar'>Guardar</button>
+            <button type="submit"  className="btn mx-5" id='guardar'>Guardar</button>
             <button type="button" onClick={handleReset} id='borrar' className="btn mx-5">Cancelar</button>
            
           </form>
+          <FirstModal show={showFirstModal} handleClose={handleFirstModalClose} />
+          <SecondModal show={showSecondModal} handleClose={handleSecondModalClose} />
+
         </div>
       
     )
