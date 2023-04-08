@@ -11,24 +11,27 @@ import {ModificarDatosDelNegocio} from './components/ModificarDatosDelNegocio';
 import {OfertaNueva} from './components/OfertaNueva';
 import { RegistrarProductoNuevo } from './components/RegistrarProductoNuevo';
 import {ProductoNuevo} from './components/ProductoNuevo';
-
+import { ModificarNegocio } from './components/ModificarNegocio';
+import {NuevaOferta} from './components/NuevaOferta';
+import "./elementos/modal.js"
 function App() {
   return (
     <div className="App">
 
       <BrowserRouter>
         <Header/>
-
+         <center>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/home" element={<Home/>}/>
           <Route exact path="/eliminarProducto" element={<EliminarProducto/>}/>
           <Route exact path="/listaProducto" element={<ListaDeProducto/>}/>
-          <Route exact path="/modificarDatosN" element={<ModificarDatosDelNegocio/>}/>
-          <Route exact path="/ofertaNueva" element={<OfertaNueva/>}/>
+          <Route exact path="/modificarDatosN" element={<ModificarNegocio/>}/>
+          <Route exact path="/ofertaNueva" element={<NuevaOferta/>}/>
           <Route exact path="/registrarProductoN" element={<ProductoNuevo/>}/>
           <Route exact path="*" element={<ErrorNotFound/>}/>
         </Routes>
+        </center>
       </BrowserRouter>
 
     </div>

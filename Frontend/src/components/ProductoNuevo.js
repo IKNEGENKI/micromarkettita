@@ -3,7 +3,10 @@ import {Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, M
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../components/Input';
-import '../css/OfertaNueva.css';
+import '../css/ventanaImagen.css';
+//import '../elementos/modal.js'
+//import '../'
+//import '../css/OfertaNueva.css';
 import '../css/estilos.css';
 export const ProductoNuevo = () => {
 	const [producto, cambiarProducto] = useState({campo: '', valido: null});
@@ -16,11 +19,11 @@ export const ProductoNuevo = () => {
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
 	const expresiones = {
-		descripcion: /^[a-zA-Z0-9_-]{10,100}$/, // Letras, numeros, guion y guion_bajo.
+		descripcion: /^[a-zA-Z0-9-|_|!|#|%|(|)|,|.\s]{10,100}$/, // Letras, numeros, guion y guion_bajo.
 		producto: /^[a-zA-ZÀ-ÿ0-9\s]{2,20}$/, // Letras y espacios, pueden llevar acentos.
-		marca: /^[a-zA-Z0-9]{3,15}$/, //para numeros y letras
+		marca: /^[a-zA-Z0-9\s]{3,15}$/, //para numeros y letras
 		codigo: /^\d{1,10}$/, // 1 a 10 numeros.
-		precio: /^\d+.+\d{1,10}$/, // 1 a 10 numeros.
+		precio: /^[0-9]{1,4}(\.[0-9]{2})$/, // Numeros decimales, de uno a cuatro antes el punto y solo dos decimales despues.
 	}
 
     /*const handleSubmit = (event) => {
@@ -93,7 +96,8 @@ export const ProductoNuevo = () => {
 	return (
      <center>
 	 <div id='fondo' className='responsive'>
-
+	 
+	 			
         <br/>
 			
 			
@@ -128,7 +132,7 @@ export const ProductoNuevo = () => {
 				<Input
 					estado={categoria}
 					cambiarEstado={cambiarCategoria}
-					tipo="categoria"
+					tipo="text"
 					label="Categoria*:"
 					name="categoria"
 					leyendaError="La categoria solo debe ser una de las propuestas"
@@ -138,21 +142,21 @@ export const ProductoNuevo = () => {
 				<Input
 					estado={descripcion}
 					cambiarEstado={cambiarDescripcion}
-					tipo="descripcion"
+					tipo="text"
 					label="Descripcion*:"
 					name="descripcion"
-					placeholder="Di algo interesante de tu producto"
+					placeholder="Di algo interesante de tu negocio"
 					leyendaError="La descripcion debe ser de 10 a 100 caracteres, y contener letras, numeros y caracteres especiales como ser: _ - ! % ()"
 					expresionRegular={expresiones.descripcion}
 				/>
 				<Input
 					estado={precio}
 					cambiarEstado={cambiarPrecio}
-					tipo="precio"
+					tipo="text"
 					label="Precio de venta:*"
 					name="precio"
 					placeholder="23.00"
-					leyendaError="El precio solo puede contener numeros y un caracter (.) para indicar decimal"
+					leyendaError="El precio solo puede contener numeros, un caracter especial (.) y dos decimales"
 					expresionRegular={expresiones.precio}
 				/>
 				<Input
@@ -176,6 +180,7 @@ export const ProductoNuevo = () => {
              type="file"
              onChange={(e) => handleChange(e.target)}
              ></input>
+			
             {images.map((row,index) =>
             <div key={index}>
               <br></br>
@@ -185,6 +190,7 @@ export const ProductoNuevo = () => {
               <br></br>
               <button id = "deleteImg" 
                onClick={() => deleteImage(row)}> Eliminar</button>
+			   
               </div>
             </div>
             )}
@@ -207,7 +213,10 @@ export const ProductoNuevo = () => {
 			<div>
 				
 				</div>
+
+		
 		</main>
+           <script src='../elementos/modal.js'></script>
         </div>
 		</center>
 	);

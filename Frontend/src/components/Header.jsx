@@ -12,6 +12,7 @@ import {MdSell} from "react-icons/md"
 import {BiHomeHeart} from "react-icons/bi"
 import { FaStore } from "react-icons/fa" ;   
 import { TiThMenu } from "react-icons/ti";
+import "../config/barra"
 export const Header = () => {
   return (
     <>  
@@ -23,13 +24,9 @@ export const Header = () => {
     <body id="body">
 
         <header>
-            <div class="icon__menu">
-                <i id="btn_open"><TiThMenu/></i>
-             </div>
         </header>
         
         <div class="items" id="menu_side"> 
-        
         
             <nav className="menu navbar-expand-lg" >
            
@@ -95,9 +92,10 @@ export const Header = () => {
                 </div>
 
             </nav>
+            
         </div>
-        <script src="../config/barra.js"></script>
         </body>
+        
     </>
     
   )
