@@ -12,7 +12,7 @@ class ofertaController extends Controller
      */
     public function index()
     {
-        return modeloOferta::all();
+        return oferta::all();
     }
 
    
@@ -32,7 +32,7 @@ class ofertaController extends Controller
     
         $validatedData = $request->validate($rules);
     
-        $oferta = new modeloOferta();
+        $oferta = new oferta();
         $oferta->descripcion = $request->input('Descripción');
         $oferta->fechaIni = $request->input('Inicio de oferta');
         $oferta->fechaFin = $request->input('Fin oferta');
@@ -45,7 +45,7 @@ class ofertaController extends Controller
      */
     public function show(string $id)
     {
-        return modeloOferta::find($id);
+        return oferta::find($id);
     }
 
     /**
@@ -53,7 +53,7 @@ class ofertaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return modeloOferta::find($id);
+        return oferta::find($id);
     }
 
     /**
@@ -61,7 +61,7 @@ class ofertaController extends Controller
      */
     public function destroy(string $id)
     {
-        $oferta = modeloOferta::find($id);
+        $oferta = oferta::find($id);
         $oferta->delete();
     }
 }

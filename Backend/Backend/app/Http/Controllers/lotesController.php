@@ -9,7 +9,7 @@ class lotesController extends Controller
 
     public function index()
     {
-        return modeloLote::all();
+        return lote::all();
     }
     
     /**
@@ -17,7 +17,7 @@ class lotesController extends Controller
      */
     public function store(Request $request)
     {
-        $lote = new modeloLote ($request->all());
+        $lote = new lote ($request->all());
         $lote->save();
         return $lote;
     }
@@ -27,7 +27,7 @@ class lotesController extends Controller
      */
     public function show(string $id)
     {
-        return modeloLote::find($id);
+        return lote::find($id);
     }
 
     
@@ -36,7 +36,7 @@ class lotesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $lote = modeloLote::find($id);
+        $lote = lote::find($id);
         if(!is_null($lote)){
             $lote->update($request->all());
             return $lote;
@@ -48,7 +48,7 @@ class lotesController extends Controller
      */
     public function destroy(string $id)
     {
-        $lote = modeloLote::find($id);
+        $lote = lote::find($id);
         $lote->delete();
     }
 }

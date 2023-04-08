@@ -9,7 +9,7 @@ class tiendasController extends Controller
     
     public function index()
     {
-        return modeloTienda::all();
+        return tienda::all();
     }
 
     /**
@@ -17,7 +17,7 @@ class tiendasController extends Controller
      */
     public function create()
     {
-        $tienda = new modeloTienda();
+        $tienda = new tienda();
         $tienda-> codcat = "td001";
         $tienda-> nombre->input('Nombre');
         $tienda-> direccion->input('Dirección');
@@ -34,7 +34,7 @@ class tiendasController extends Controller
      */
     public function store(Request $request)
     {
-        $tienda = new modeloTienda ($request->all());
+        $tienda = new tienda ($request->all());
         $tienda->save();
         return $tienda;
     }
@@ -44,7 +44,7 @@ class tiendasController extends Controller
      */
     public function show(string $id)
     {
-        return modeloTienda::find($id);
+        return tienda::find($id);
     }
 
     
@@ -53,7 +53,7 @@ class tiendasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $tienda = modeloTienda::find($id);
+        $tienda = tienda::find($id);
         if(!is_null($tienda)){
             $tienda->update($request->all());
             return $tienda;
@@ -65,7 +65,7 @@ class tiendasController extends Controller
      */
     public function destroy(string $id)
     {
-        $tienda = modeloTienda::find($id);
+        $tienda = tienda::find($id);
         $tienda->delete();
     }
 }

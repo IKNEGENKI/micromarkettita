@@ -20,7 +20,7 @@ class categoriaController extends Controller
      */
     public function store(Request $request)
     {
-        $categoria = new modeloCategoria ($request->all());
+        $categoria = new categoria ($request->all());
         $categoria->save();
         return $categoria;
     }
@@ -50,7 +50,7 @@ class categoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        $categoria = modeloCategoria::find($id);
+        $categoria = categoria::find($id);
         $categoria->delete();
     }
 }
