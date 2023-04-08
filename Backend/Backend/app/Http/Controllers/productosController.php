@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\producto;
+use Illuminate\Support\Facades\DB;
+
 class productosController extends Controller
 {
     /**
@@ -11,7 +13,9 @@ class productosController extends Controller
      */
     public function index()
     {
-        return modeloProducto::all();
+        $sql = 'SELECT * FROM producto';
+        $producto = DB::select($sql);
+        return $producto;
     }
 
    
@@ -35,7 +39,7 @@ class productosController extends Controller
     
         $validatedData = $request->validate($rules);
     
-        $producto = new modeloProducto;
+        $producto = new producto;
         
         $producto->nombre = $request->input( 'Nombre de producto');
         $producto->codprod = $request->input('Código de producto');
@@ -72,7 +76,7 @@ class productosController extends Controller
      */
     public function update(Request $request, string $nombrepr)
     {
-        $prod = modeloProducto::findOrFail($nombrepr); // encontrar el usuario por el ID
+        $prod = producto::findOrFail($nombrepr); // encontrar el usuario por el ID
 
         $prod->nombre = $request->input( 'Nombre de producto');
         $prod->codprod = $request->input('Código de producto');
@@ -90,7 +94,7 @@ class productosController extends Controller
      */
     public function destroy(string $id)
     {
-        $prod = modeloProducto::find($id);
+        $prod = producto::find($id);
         $prod->delete();
     }
 }

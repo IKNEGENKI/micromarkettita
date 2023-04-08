@@ -21,7 +21,10 @@
     "moment": "^2.29.4",
     "react": "^17.0.2",
     "react-bootstrap": "^2.7.2",
+<<<<<<< HEAD
     "react-bundle": "^1.1.0",
+=======
+>>>>>>> 8abfbfd8765aff7ccb5110a6a954992f8af10b96
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.10.0",
     "react-scripts": "^5.0.1",

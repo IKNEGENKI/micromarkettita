@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\oferta;
+use Illuminate\Support\Facades\DB;
 
 class ofertaController extends Controller
 {
@@ -12,7 +13,9 @@ class ofertaController extends Controller
      */
     public function index()
     {
-        return modeloOferta::all();
+        $sql = 'SELECT * FROM oferta';
+        $oferta = DB::select($sql);
+        return $oferta;
     }
 
    
@@ -32,7 +35,7 @@ class ofertaController extends Controller
     
         $validatedData = $request->validate($rules);
     
-        $oferta = new modeloOferta();
+        $oferta = new oferta();
         $oferta->descripcion = $request->input('Descripción');
         $oferta->fechaIni = $request->input('Inicio de oferta');
         $oferta->fechaFin = $request->input('Fin oferta');
@@ -45,7 +48,7 @@ class ofertaController extends Controller
      */
     public function show(string $id)
     {
-        return modeloOferta::find($id);
+        return oferta::find($id);
     }
 
     /**
@@ -53,7 +56,7 @@ class ofertaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return modeloOferta::find($id);
+        return oferta::find($id);
     }
 
     /**
@@ -61,7 +64,7 @@ class ofertaController extends Controller
      */
     public function destroy(string $id)
     {
-        $oferta = modeloOferta::find($id);
+        $oferta = oferta::find($id);
         $oferta->delete();
     }
 }
